@@ -34,6 +34,39 @@ namespace Palletizer.Class
 
         }
 
+        public bool isPalletEmpty()
+        {
+            SqlConnection conn = new SqlConnection(connection.ConnectionString);
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT pallet_id from dbo.palletizer_order where pallet_id = @id", conn);
+            cmd.Parameters.AddWithValue("@id", _palletID);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            if (rdr.Read())
+            {
+                return false;
+            }
+            else
+            {
+
+                return true;
+ 
+            }
+
+        }
+
+
+        public void emptyPallet()
+        {
+            SqlConnection conn = new SqlConnection(connection.ConnectionString);
+            conn.Open();
+            SqlCommand cmdWrite = new SqlCommand("UPDATE dbo.palletizer set free_or_not = 'Free' where id=@id", conn);
+            cmdWrite.Parameters.AddWithValue("@id", _palletID);
+            cmdWrite.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public Pallet(int palletID)
         {

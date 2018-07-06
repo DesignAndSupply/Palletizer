@@ -42,6 +42,22 @@ namespace Palletizer.ClassLib
 
         }
 
+        public int _belongsToPallet
+        {
+            get
+            {
+                SqlConnection conn = new SqlConnection(connection.ConnectionString);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT top 1 pallet_id from dbo.palletizer_order WHERE door_id =@doorID order by pallet_id DESC", conn);
+                cmd.Parameters.AddWithValue("@doorID", _doorID);
+                
+                return Convert.ToInt32(cmd.ExecuteScalar());
+
+            }
+
+        }
+
 
         public Door(double doorID)
         {
@@ -49,7 +65,16 @@ namespace Palletizer.ClassLib
         }
 
        
+        public void removeFromExistingPallet()
+        {
+            SqlConnection conn = new SqlConnection(connection.ConnectionString);
+            conn.Open();
 
+            SqlCommand cmd = new SqlCommand("DELETE FROM dbo.palletizer_order  WHERE door_id =@doorID", conn);
+            cmd.Parameters.AddWithValue("@doorID", _doorID);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
 
 

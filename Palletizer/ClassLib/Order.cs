@@ -11,6 +11,7 @@ namespace Palletizer.ClassLib
     class Order
     {
         public double _orderID { get; set; }
+        public string _dept { get; set; }
         public int _doorsOnOrder { get
             {
 
@@ -26,9 +27,10 @@ namespace Palletizer.ClassLib
         }
 
 
-        public Order(double orderID)
+        public Order(double orderID, string dept)
         {
             _orderID = orderID;
+            _dept = dept;
         }
 
         public double _orderMass
@@ -53,8 +55,9 @@ namespace Palletizer.ClassLib
                 SqlConnection conn = new SqlConnection(connection.ConnectionString);
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT pallet_id from dbo.palletizer_order WHERE order_id =@orderID", conn);
+                SqlCommand cmd = new SqlCommand("SELECT top 1 pallet_id from dbo.palletizer_order WHERE order_id =@orderID and dept=@dept order by pallet_id DESC", conn);
                 cmd.Parameters.AddWithValue("@orderID", _orderID);
+                cmd.Parameters.AddWithValue("@dept", _dept);
                 return Convert.ToInt32(cmd.ExecuteScalar());
 
             }

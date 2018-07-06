@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="order_databaseDataSet" targetNamespace="http://tempuri.org/order_databaseDataSet.xsd" xmlns:mstns="http://tempuri.org/order_databaseDataSet.xsd" xmlns="http://tempuri.org/order_databaseDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="order_databaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="order_databaseConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Palletizer.Properties.Settings.GlobalReference.Default.order_databaseConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_palletizer_visualTableAdapter" GeneratorDataComponentClassName="c_view_palletizer_visualTableAdapter" Name="c_view_palletizer_visual" UserDataComponentName="c_view_palletizer_visualTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_palletizer_visual" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Pallet ID], Free, Department, [Pallet Mass] FROM dbo.c_view_palletizer_visual</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Pallet ID" DataSetColumn="Pallet ID" />
+              <Mapping SourceColumn="Free" DataSetColumn="Free" />
+              <Mapping SourceColumn="Department" DataSetColumn="Department" />
+              <Mapping SourceColumn="Pallet Mass" DataSetColumn="Pallet Mass" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="c_view_palletizer_visual_doorTableAdapter" GeneratorDataComponentClassName="c_view_palletizer_visual_doorTableAdapter" Name="c_view_palletizer_visual_door" UserDataComponentName="c_view_palletizer_visual_doorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="order_databaseConnectionString (Settings)" DbObjectName="order_database.dbo.c_view_palletizer_visual_door" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select * from c_view_palletizer_visual_door</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Pallet ID" DataSetColumn="Pallet ID" />
+              <Mapping SourceColumn="Order ID" DataSetColumn="Order ID" />
+              <Mapping SourceColumn="Door ID" DataSetColumn="Door ID" />
+              <Mapping SourceColumn="Customer" DataSetColumn="Customer" />
+              <Mapping SourceColumn="Qty Same" DataSetColumn="Qty Same" />
+              <Mapping SourceColumn="Door Type" DataSetColumn="Door Type" />
+              <Mapping SourceColumn="Door Mass" DataSetColumn="Door Mass" />
+              <Mapping SourceColumn="Department" DataSetColumn="Department" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="order_databaseDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="order_databaseDataSet" msprop:Generator_UserDSName="order_databaseDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="c_view_palletizer_visual" msprop:Generator_TableClassName="c_view_palletizer_visualDataTable" msprop:Generator_TableVarName="tablec_view_palletizer_visual" msprop:Generator_RowChangedName="c_view_palletizer_visualRowChanged" msprop:Generator_TablePropName="c_view_palletizer_visual" msprop:Generator_RowDeletingName="c_view_palletizer_visualRowDeleting" msprop:Generator_RowChangingName="c_view_palletizer_visualRowChanging" msprop:Generator_RowEvHandlerName="c_view_palletizer_visualRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_palletizer_visualRowDeleted" msprop:Generator_RowClassName="c_view_palletizer_visualRow" msprop:Generator_UserTableName="c_view_palletizer_visual" msprop:Generator_RowEvArgName="c_view_palletizer_visualRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pallet_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnPallet_ID" msprop:Generator_ColumnPropNameInRow="Pallet_ID" msprop:Generator_ColumnPropNameInTable="Pallet_IDColumn" msprop:Generator_UserColumnName="Pallet ID" type="xs:int" />
+              <xs:element name="Free" msprop:Generator_ColumnVarNameInTable="columnFree" msprop:Generator_ColumnPropNameInRow="Free" msprop:Generator_ColumnPropNameInTable="FreeColumn" msprop:Generator_UserColumnName="Free" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Pallet_x0020_Mass" msprop:Generator_ColumnVarNameInTable="columnPallet_Mass" msprop:Generator_ColumnPropNameInRow="Pallet_Mass" msprop:Generator_ColumnPropNameInTable="Pallet_MassColumn" msprop:Generator_UserColumnName="Pallet Mass" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="c_view_palletizer_visual_door" msprop:Generator_TableClassName="c_view_palletizer_visual_doorDataTable" msprop:Generator_TableVarName="tablec_view_palletizer_visual_door" msprop:Generator_TablePropName="c_view_palletizer_visual_door" msprop:Generator_RowDeletingName="c_view_palletizer_visual_doorRowDeleting" msprop:Generator_RowChangingName="c_view_palletizer_visual_doorRowChanging" msprop:Generator_RowEvHandlerName="c_view_palletizer_visual_doorRowChangeEventHandler" msprop:Generator_RowDeletedName="c_view_palletizer_visual_doorRowDeleted" msprop:Generator_UserTableName="c_view_palletizer_visual_door" msprop:Generator_RowChangedName="c_view_palletizer_visual_doorRowChanged" msprop:Generator_RowEvArgName="c_view_palletizer_visual_doorRowChangeEvent" msprop:Generator_RowClassName="c_view_palletizer_visual_doorRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Pallet_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnPallet_ID" msprop:Generator_ColumnPropNameInRow="Pallet_ID" msprop:Generator_ColumnPropNameInTable="Pallet_IDColumn" msprop:Generator_UserColumnName="Pallet ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Order_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnOrder_ID" msprop:Generator_ColumnPropNameInRow="Order_ID" msprop:Generator_ColumnPropNameInTable="Order_IDColumn" msprop:Generator_UserColumnName="Order ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Door_x0020_ID" msprop:Generator_ColumnVarNameInTable="columnDoor_ID" msprop:Generator_ColumnPropNameInRow="Door_ID" msprop:Generator_ColumnPropNameInTable="Door_IDColumn" msprop:Generator_UserColumnName="Door ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Customer" msprop:Generator_ColumnVarNameInTable="columnCustomer" msprop:Generator_ColumnPropNameInRow="Customer" msprop:Generator_ColumnPropNameInTable="CustomerColumn" msprop:Generator_UserColumnName="Customer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Qty_x0020_Same" msprop:Generator_ColumnVarNameInTable="columnQty_Same" msprop:Generator_ColumnPropNameInRow="Qty_Same" msprop:Generator_ColumnPropNameInTable="Qty_SameColumn" msprop:Generator_UserColumnName="Qty Same" type="xs:int" minOccurs="0" />
+              <xs:element name="Door_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnDoor_Type" msprop:Generator_ColumnPropNameInRow="Door_Type" msprop:Generator_ColumnPropNameInTable="Door_TypeColumn" msprop:Generator_UserColumnName="Door Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Door_x0020_Mass" msprop:Generator_ColumnVarNameInTable="columnDoor_Mass" msprop:Generator_ColumnPropNameInRow="Door_Mass" msprop:Generator_ColumnPropNameInTable="Door_MassColumn" msprop:Generator_UserColumnName="Door Mass" type="xs:int" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:c_view_palletizer_visual" />
+      <xs:field xpath="mstns:Pallet_x0020_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
