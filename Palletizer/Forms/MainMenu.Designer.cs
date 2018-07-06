@@ -29,23 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.txtDoorNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dgVisual = new System.Windows.Forms.DataGridView();
-            this.cviewpalletizervisualBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
-            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
-            this.cviewpalletizervisualdoorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.c_view_palletizer_visual_doorTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visual_doorTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgVisualDoor = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.palletIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,18 +48,25 @@
             this.doorTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doorMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departmentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.cviewpalletizervisualdoorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
+            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cviewpalletizervisualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
+            this.c_view_palletizer_visual_doorTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visual_doorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualdoorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualDoor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualdoorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDoorNumber
             // 
-            this.txtDoorNumber.Location = new System.Drawing.Point(91, 37);
+            this.txtDoorNumber.Location = new System.Drawing.Point(91, 27);
             this.txtDoorNumber.Name = "txtDoorNumber";
             this.txtDoorNumber.Size = new System.Drawing.Size(66, 20);
             this.txtDoorNumber.TabIndex = 0;
@@ -73,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 40);
+            this.label1.Location = new System.Drawing.Point(12, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 1;
@@ -86,7 +87,7 @@
             "Weld",
             "Buff",
             "Paint"});
-            this.cmbDepartment.Location = new System.Drawing.Point(91, 64);
+            this.cmbDepartment.Location = new System.Drawing.Point(91, 54);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(157, 21);
             this.cmbDepartment.TabIndex = 2;
@@ -94,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 67);
+            this.label2.Location = new System.Drawing.Point(12, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
@@ -102,7 +103,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(254, 63);
+            this.btnGenerate.Location = new System.Drawing.Point(254, 53);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 4;
@@ -132,53 +133,6 @@
             this.dgVisual.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisual.Size = new System.Drawing.Size(446, 487);
             this.dgVisual.TabIndex = 5;
-            // 
-            // cviewpalletizervisualBindingSource
-            // 
-            this.cviewpalletizervisualBindingSource.DataMember = "c_view_palletizer_visual";
-            this.cviewpalletizervisualBindingSource.DataSource = this.order_databaseDataSet;
-            // 
-            // order_databaseDataSet
-            // 
-            this.order_databaseDataSet.DataSetName = "order_databaseDataSet";
-            this.order_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // palletIDDataGridViewTextBoxColumn
-            // 
-            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
-            // 
-            // freeDataGridViewTextBoxColumn
-            // 
-            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
-            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
-            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // palletMassDataGridViewTextBoxColumn
-            // 
-            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
-            // 
-            // c_view_palletizer_visualTableAdapter
-            // 
-            this.c_view_palletizer_visualTableAdapter.ClearBeforeFill = true;
-            // 
-            // cviewpalletizervisualdoorBindingSource
-            // 
-            this.cviewpalletizervisualdoorBindingSource.DataMember = "c_view_palletizer_visual_door";
-            this.cviewpalletizervisualdoorBindingSource.DataSource = this.order_databaseDataSet;
-            // 
-            // c_view_palletizer_visual_doorTableAdapter
-            // 
-            this.c_view_palletizer_visual_doorTableAdapter.ClearBeforeFill = true;
             // 
             // Column1
             // 
@@ -211,6 +165,24 @@
             this.dgVisualDoor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisualDoor.Size = new System.Drawing.Size(828, 487);
             this.dgVisualDoor.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Pallet Load:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(461, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Door information:";
             // 
             // palletIDDataGridViewTextBoxColumn1
             // 
@@ -260,23 +232,52 @@
             this.departmentDataGridViewTextBoxColumn1.HeaderText = "Department";
             this.departmentDataGridViewTextBoxColumn1.Name = "departmentDataGridViewTextBoxColumn1";
             // 
-            // label3
+            // cviewpalletizervisualdoorBindingSource
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Pallet Load:";
+            this.cviewpalletizervisualdoorBindingSource.DataMember = "c_view_palletizer_visual_door";
+            this.cviewpalletizervisualdoorBindingSource.DataSource = this.order_databaseDataSet;
             // 
-            // label4
+            // order_databaseDataSet
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(461, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Door information:";
+            this.order_databaseDataSet.DataSetName = "order_databaseDataSet";
+            this.order_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // palletIDDataGridViewTextBoxColumn
+            // 
+            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
+            // 
+            // freeDataGridViewTextBoxColumn
+            // 
+            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
+            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
+            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
+            // 
+            // departmentDataGridViewTextBoxColumn
+            // 
+            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
+            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
+            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
+            // 
+            // palletMassDataGridViewTextBoxColumn
+            // 
+            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
+            // 
+            // cviewpalletizervisualBindingSource
+            // 
+            this.cviewpalletizervisualBindingSource.DataMember = "c_view_palletizer_visual";
+            this.cviewpalletizervisualBindingSource.DataSource = this.order_databaseDataSet;
+            // 
+            // c_view_palletizer_visualTableAdapter
+            // 
+            this.c_view_palletizer_visualTableAdapter.ClearBeforeFill = true;
+            // 
+            // c_view_palletizer_visual_doorTableAdapter
+            // 
+            this.c_view_palletizer_visual_doorTableAdapter.ClearBeforeFill = true;
             // 
             // MainMenu
             // 
@@ -292,16 +293,18 @@
             this.Controls.Add(this.cmbDepartment);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDoorNumber);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Palletizer";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgVisual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualdoorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisualDoor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualdoorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
