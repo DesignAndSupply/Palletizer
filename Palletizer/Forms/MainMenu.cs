@@ -26,11 +26,13 @@ namespace Palletizer
             {
                 cmbDepartment.Text = args[1];
                 txtDoorNumber.Text = args[2];
+                calcPallet();
             }
 
         }
 
-        private void btnGenerate_Click(object sender, EventArgs e)
+
+        private void calcPallet()
         {
             string dept = cmbDepartment.Text;
             int freePalletID;
@@ -48,16 +50,16 @@ namespace Palletizer
 
                     if (o._orderMass > 2)
                     {
-                       
+
                         if (o._belongsToPallet == 0)
                         {
                             freePalletID = a._getFreePallet;
                             //INSERT DOOR RECORD
-                            addDoorToPallet(d._doorID, o._orderID, freePalletID,dept);
+                            addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
 
                             //UPDATE PALLET NUMBER
                             updatePalletStatus(freePalletID);
-                            MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
                         else
@@ -67,7 +69,7 @@ namespace Palletizer
                                 //ADD TO EXISTING PALLET o._belongsToPallet
                                 addDoorToPallet(d._doorID, o._orderID, o._belongsToPallet, dept);
 
-                                MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet , "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet , "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
@@ -82,14 +84,14 @@ namespace Palletizer
                                 updatePalletStatus(freePalletID);
 
 
-                                MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     break;
@@ -127,7 +129,7 @@ namespace Palletizer
 
                             //UPDATE PALLET NUMBER
                             updatePalletStatus(freePalletID);
-                            MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
                         else
@@ -137,7 +139,7 @@ namespace Palletizer
                                 //ADD TO EXISTING PALLET o._belongsToPallet
                                 addDoorToPallet(d._doorID, o._orderID, o._belongsToPallet, dept);
 
-                                MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
@@ -152,14 +154,14 @@ namespace Palletizer
                                 updatePalletStatus(freePalletID);
 
 
-                                MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
 
@@ -180,7 +182,7 @@ namespace Palletizer
                     p._palletID = oldPalletID;
 
                     //ONLY RUN IF THE PALLET IS EMPTY
-                    if(p.isPalletEmpty()== true)
+                    if (p.isPalletEmpty() == true)
                     {
                         p.emptyPallet();
                         //updatePalletDepartment(p._palletID,"Weld");
@@ -193,7 +195,7 @@ namespace Palletizer
                 default:
                     break;
             }
-            
+
 
             this.c_view_palletizer_visual_doorTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual_door);
             this.c_view_palletizer_visualTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual);
@@ -201,7 +203,12 @@ namespace Palletizer
             dgVisualDoor.Refresh();
             //Allocation a = new Allocation();
             //MessageBox.Show(a.getFreePallet(cmbDepartment.Text).ToString());
-            
+        }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+
+            calcPallet();
         }
 
 
