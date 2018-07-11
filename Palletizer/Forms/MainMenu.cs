@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Palletizer.Class;
 using Palletizer.ClassLib;
+using Palletizer.Forms;
 using System.Data.SqlClient;
 
 
@@ -26,7 +27,7 @@ namespace Palletizer
             {
                 cmbDepartment.Text = args[1];
                 txtDoorNumber.Text = args[2];
-                calcPallet();
+                //calcPallet();
             }
 
         }
@@ -38,6 +39,8 @@ namespace Palletizer
             int freePalletID;
             int oldPalletID;
             double doorNum = Convert.ToDouble(txtDoorNumber.Text);
+            
+
 
             Door d = new Door(doorNum);
             Order o = new Order(d._orderID, dept);
@@ -53,13 +56,25 @@ namespace Palletizer
 
                         if (o._belongsToPallet == 0)
                         {
-                            freePalletID = a._getFreePallet;
+                            frmAllocationType frmAT = new frmAllocationType();
+                            frmAT.ShowDialog();
+
+                            if (Allocation._getAllocationType == "Manual")
+                            {
+                                freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                            }
+                            else
+                            {
+                                freePalletID = a._getFreePallet;
+                            }
+
+                            
                             //INSERT DOOR RECORD
                             addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
 
                             //UPDATE PALLET NUMBER
                             updatePalletStatus(freePalletID);
-                            //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
                         else
@@ -69,14 +84,24 @@ namespace Palletizer
                                 //ADD TO EXISTING PALLET o._belongsToPallet
                                 addDoorToPallet(d._doorID, o._orderID, o._belongsToPallet, dept);
 
-                                //MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet , "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet , "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
                                 //sets the pallet as not free in buffing as it has doors on it
                                 //updatePalletDepartment(o._belongsToPallet, "Buff");
+                                frmAllocationType frmAT = new frmAllocationType();
+                                frmAT.ShowDialog();
 
-                                freePalletID = a._getFreePallet;
+                                if (Allocation._getAllocationType == "Manual")
+                                {
+                                    freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                                }
+                                else
+                                {
+                                    freePalletID = a._getFreePallet;
+                                }
+
                                 //INSERT DOOR RECORD
                                 addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
 
@@ -84,14 +109,14 @@ namespace Palletizer
                                 updatePalletStatus(freePalletID);
 
 
-                                //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
 
                     }
                     else
                     {
-                        //MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("This door can be placed in the racking.", "Place in racking", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     break;
@@ -123,13 +148,23 @@ namespace Palletizer
 
                         if (o._belongsToPallet == 0)
                         {
-                            freePalletID = a._getFreePallet;
+                            frmAllocationType frmAT = new frmAllocationType();
+                            frmAT.ShowDialog();
+
+                            if (Allocation._getAllocationType == "Manual")
+                            {
+                                freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                            }
+                            else
+                            {
+                                freePalletID = a._getFreePallet;
+                            }
                             //INSERT DOOR RECORD
                             addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
 
                             //UPDATE PALLET NUMBER
                             updatePalletStatus(freePalletID);
-                            //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
                         else
@@ -139,14 +174,24 @@ namespace Palletizer
                                 //ADD TO EXISTING PALLET o._belongsToPallet
                                 addDoorToPallet(d._doorID, o._orderID, o._belongsToPallet, dept);
 
-                                //MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Please add this door number to pallet: " + o._belongsToPallet, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
                                 //sets the pallet as not free in buffing as it has doors on it
                                 //updatePalletDepartment(o._belongsToPallet, "Buff");
 
-                                freePalletID = a._getFreePallet;
+                                frmAllocationType frmAT = new frmAllocationType();
+                                frmAT.ShowDialog();
+
+                                if (Allocation._getAllocationType == "Manual")
+                                {
+                                    freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                                }
+                                else
+                                {
+                                    freePalletID = a._getFreePallet;
+                                }
                                 //INSERT DOOR RECORD
                                 addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
 
@@ -154,7 +199,7 @@ namespace Palletizer
                                 updatePalletStatus(freePalletID);
 
 
-                                //MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
 
@@ -270,6 +315,12 @@ namespace Palletizer
             // TODO: This line of code loads data into the 'order_databaseDataSet.c_view_palletizer_visual' table. You can move, or remove it, as needed.
             this.c_view_palletizer_visualTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmAllocationType frmAT = new frmAllocationType();
+            frmAT.ShowDialog();
         }
     }
 }

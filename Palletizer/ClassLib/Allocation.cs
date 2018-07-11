@@ -21,12 +21,13 @@ namespace Palletizer.Class
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
+
         }
 
+        public static string _getManualPallet { get; set; }
+        public static string _getAllocationType { get; set; }
 
-
-
- 
+        
 
         public Allocation(string dept)
         {
