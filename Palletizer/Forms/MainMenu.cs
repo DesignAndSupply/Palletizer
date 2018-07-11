@@ -19,6 +19,15 @@ namespace Palletizer
         public MainMenu()
         {
             InitializeComponent();
+            string[] args = Environment.GetCommandLineArgs();
+
+
+            if (args.Length > 1)
+            {
+                cmbDepartment.Text = args[1];
+                txtDoorNumber.Text = args[2];
+            }
+
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)

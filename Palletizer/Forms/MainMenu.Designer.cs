@@ -66,7 +66,7 @@
             // 
             // txtDoorNumber
             // 
-            this.txtDoorNumber.Location = new System.Drawing.Point(91, 27);
+            this.txtDoorNumber.Location = new System.Drawing.Point(96, 36);
             this.txtDoorNumber.Name = "txtDoorNumber";
             this.txtDoorNumber.Size = new System.Drawing.Size(66, 20);
             this.txtDoorNumber.TabIndex = 0;
@@ -74,7 +74,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(17, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 1;
@@ -87,7 +87,7 @@
             "Weld",
             "Buff",
             "Paint"});
-            this.cmbDepartment.Location = new System.Drawing.Point(91, 54);
+            this.cmbDepartment.Location = new System.Drawing.Point(96, 63);
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(157, 21);
             this.cmbDepartment.TabIndex = 2;
@@ -95,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 57);
+            this.label2.Location = new System.Drawing.Point(17, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
@@ -103,7 +103,7 @@
             // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(254, 53);
+            this.btnGenerate.Location = new System.Drawing.Point(259, 62);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 4;
