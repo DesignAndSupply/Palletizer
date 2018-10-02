@@ -36,10 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dgVisual = new System.Windows.Forms.DataGridView();
-            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cviewpalletizervisualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +53,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
             this.c_view_palletizer_visual_doorTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visual_doorTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
+            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
@@ -125,7 +123,6 @@
             this.dgVisual.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.palletIDDataGridViewTextBoxColumn,
             this.freeDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn,
             this.palletMassDataGridViewTextBoxColumn});
             this.dgVisual.DataSource = this.cviewpalletizervisualBindingSource;
             this.dgVisual.Location = new System.Drawing.Point(12, 120);
@@ -134,30 +131,6 @@
             this.dgVisual.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisual.Size = new System.Drawing.Size(446, 487);
             this.dgVisual.TabIndex = 5;
-            // 
-            // palletIDDataGridViewTextBoxColumn
-            // 
-            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
-            // 
-            // freeDataGridViewTextBoxColumn
-            // 
-            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
-            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
-            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // palletMassDataGridViewTextBoxColumn
-            // 
-            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
             // 
             // cviewpalletizervisualBindingSource
             // 
@@ -280,22 +253,29 @@
             // 
             this.c_view_palletizer_visual_doorTableAdapter.ClearBeforeFill = true;
             // 
-            // button1
+            // palletIDDataGridViewTextBoxColumn
             // 
-            this.button1.Location = new System.Drawing.Point(518, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
+            // 
+            // freeDataGridViewTextBoxColumn
+            // 
+            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
+            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
+            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
+            // 
+            // palletMassDataGridViewTextBoxColumn
+            // 
+            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 622);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgVisualDoor);
@@ -333,10 +313,6 @@
         private order_databaseDataSet order_databaseDataSet;
         private System.Windows.Forms.BindingSource cviewpalletizervisualBindingSource;
         private order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter c_view_palletizer_visualTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn palletIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn freeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn palletMassDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cviewpalletizervisualdoorBindingSource;
         private order_databaseDataSetTableAdapters.c_view_palletizer_visual_doorTableAdapter c_view_palletizer_visual_doorTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -351,7 +327,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn palletIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn palletMassDataGridViewTextBoxColumn;
     }
 }
 

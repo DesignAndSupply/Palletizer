@@ -27,6 +27,21 @@ namespace Palletizer.ClassLib
 
         }
 
+        public int _infillID
+        {
+            get
+            {
+                SqlConnection conn = new SqlConnection(connection.ConnectionString);
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("Select infill_id from dbo.door where id=@door_id", conn);
+                cmd.Parameters.AddWithValue("@doorID", _doorID);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+
+            }
+        }
+
+
         public double _doorMass
         {
             get

@@ -31,17 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAllocationType));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdoAuto = new System.Windows.Forms.RadioButton();
-            this.rdoManual = new System.Windows.Forms.RadioButton();
-            this.cmbPalletID = new System.Windows.Forms.ComboBox();
             this.lblPalletID = new System.Windows.Forms.Label();
-            this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
+            this.cmbPalletID = new System.Windows.Forms.ComboBox();
             this.cviewpalletizervisualBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
+            this.rdoManual = new System.Windows.Forms.RadioButton();
+            this.rdoAuto = new System.Windows.Forms.RadioButton();
             this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
             this.cmdSelect = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -57,17 +57,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selection Method";
             // 
-            // rdoAuto
+            // lblPalletID
             // 
-            this.rdoAuto.AutoSize = true;
-            this.rdoAuto.Location = new System.Drawing.Point(6, 27);
-            this.rdoAuto.Name = "rdoAuto";
-            this.rdoAuto.Size = new System.Drawing.Size(72, 17);
-            this.rdoAuto.TabIndex = 0;
-            this.rdoAuto.TabStop = true;
-            this.rdoAuto.Text = "Automatic";
-            this.rdoAuto.UseVisualStyleBackColor = true;
-            this.rdoAuto.CheckedChanged += new System.EventHandler(this.rdoAuto_CheckedChanged);
+            this.lblPalletID.AutoSize = true;
+            this.lblPalletID.Location = new System.Drawing.Point(6, 82);
+            this.lblPalletID.Name = "lblPalletID";
+            this.lblPalletID.Size = new System.Drawing.Size(50, 13);
+            this.lblPalletID.TabIndex = 3;
+            this.lblPalletID.Text = "Pallet ID:";
+            // 
+            // cmbPalletID
+            // 
+            this.cmbPalletID.DataSource = this.cviewpalletizervisualBindingSource;
+            this.cmbPalletID.DisplayMember = "Pallet ID";
+            this.cmbPalletID.FormattingEnabled = true;
+            this.cmbPalletID.Location = new System.Drawing.Point(8, 98);
+            this.cmbPalletID.Name = "cmbPalletID";
+            this.cmbPalletID.Size = new System.Drawing.Size(211, 21);
+            this.cmbPalletID.TabIndex = 2;
+            this.cmbPalletID.ValueMember = "Pallet ID";
+            // 
+            // cviewpalletizervisualBindingSource
+            // 
+            this.cviewpalletizervisualBindingSource.DataMember = "c_view_palletizer_visual";
+            this.cviewpalletizervisualBindingSource.DataSource = this.order_databaseDataSet;
+            // 
+            // order_databaseDataSet
+            // 
+            this.order_databaseDataSet.DataSetName = "order_databaseDataSet";
+            this.order_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rdoManual
             // 
@@ -81,35 +99,17 @@
             this.rdoManual.UseVisualStyleBackColor = true;
             this.rdoManual.CheckedChanged += new System.EventHandler(this.rdoManual_CheckedChanged);
             // 
-            // cmbPalletID
+            // rdoAuto
             // 
-            this.cmbPalletID.DataSource = this.cviewpalletizervisualBindingSource;
-            this.cmbPalletID.DisplayMember = "Pallet ID";
-            this.cmbPalletID.FormattingEnabled = true;
-            this.cmbPalletID.Location = new System.Drawing.Point(8, 98);
-            this.cmbPalletID.Name = "cmbPalletID";
-            this.cmbPalletID.Size = new System.Drawing.Size(211, 21);
-            this.cmbPalletID.TabIndex = 2;
-            this.cmbPalletID.ValueMember = "Pallet ID";
-            // 
-            // lblPalletID
-            // 
-            this.lblPalletID.AutoSize = true;
-            this.lblPalletID.Location = new System.Drawing.Point(6, 82);
-            this.lblPalletID.Name = "lblPalletID";
-            this.lblPalletID.Size = new System.Drawing.Size(50, 13);
-            this.lblPalletID.TabIndex = 3;
-            this.lblPalletID.Text = "Pallet ID:";
-            // 
-            // order_databaseDataSet
-            // 
-            this.order_databaseDataSet.DataSetName = "order_databaseDataSet";
-            this.order_databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cviewpalletizervisualBindingSource
-            // 
-            this.cviewpalletizervisualBindingSource.DataMember = "c_view_palletizer_visual";
-            this.cviewpalletizervisualBindingSource.DataSource = this.order_databaseDataSet;
+            this.rdoAuto.AutoSize = true;
+            this.rdoAuto.Location = new System.Drawing.Point(6, 27);
+            this.rdoAuto.Name = "rdoAuto";
+            this.rdoAuto.Size = new System.Drawing.Size(72, 17);
+            this.rdoAuto.TabIndex = 0;
+            this.rdoAuto.TabStop = true;
+            this.rdoAuto.Text = "Automatic";
+            this.rdoAuto.UseVisualStyleBackColor = true;
+            this.rdoAuto.CheckedChanged += new System.EventHandler(this.rdoAuto_CheckedChanged);
             // 
             // c_view_palletizer_visualTableAdapter
             // 
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 210);
+            this.ClientSize = new System.Drawing.Size(251, 192);
             this.Controls.Add(this.cmdSelect);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -143,8 +143,8 @@
             this.Load += new System.EventHandler(this.frmAllocationType_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

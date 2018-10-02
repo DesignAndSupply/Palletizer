@@ -16,26 +16,22 @@ namespace Palletizer.Class
             {
                 SqlConnection conn = new SqlConnection(connection.ConnectionString);
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT TOP 1 id from dbo.palletizer where free_or_not ='Free' and current_dept=@dept order by id", conn);
-                cmd.Parameters.AddWithValue("@dept", _dept);
+                SqlCommand cmd = new SqlCommand("SELECT TOP 1 id from dbo.palletizer where free_or_not ='Free' order by id", conn);
+                //cmd.Parameters.AddWithValue("@dept", _dept);
 
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
 
         }
 
+
         public static string _getManualPallet { get; set; }
         public static string _getAllocationType { get; set; }
-
-        
 
         public Allocation(string dept)
         {
             _dept = dept;
         }
-
-
-
 
     }
 }
