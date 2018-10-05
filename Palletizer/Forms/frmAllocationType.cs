@@ -13,10 +13,24 @@ namespace Palletizer.Forms
 {
     public partial class frmAllocationType : Form
     {
-        public frmAllocationType()
+        public frmAllocationType(bool typeLocked)
         {
             InitializeComponent();
+            _allocationTypeLocked = typeLocked;
+
+            if (typeLocked == true)
+            {
+                rdoManual.Checked = true;
+                rdoAuto.Visible = false;
+                hideSelector();
+                lblNotification.Text = "This door belongs to a very small order and has a core other than dufaylite, it needs to go on a pallet, Please select a pallet manually";
+                   
+            }
+
+
         }
+
+        public bool _allocationTypeLocked { get; set; }
 
         private void frmAllocationType_Load(object sender, EventArgs e)
         {

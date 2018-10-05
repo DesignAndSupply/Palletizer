@@ -25,9 +25,36 @@ namespace Palletizer
 
             if (args.Length > 1)
             {
-                cmbDepartment.Text = args[1];
-                txtDoorNumber.Text = args[2];
-                //calcPallet();
+                //cmbDepartment.Text = args[1];
+                //txtDoorNumber.Text = args[2];
+
+                //if (args[1] == "Paint")
+                //{
+                  //  calcPallet();
+                //}
+            }
+
+            lblMachineName.Text = Environment.MachineName.ToString();
+
+            switch (Environment.MachineName)
+            {
+                case "BENDWELD-PC":
+                    cmbDepartment.Text = "Weld";
+                    cmbDepartment.Enabled = false;
+                    break;
+                case "BUFFING-PC":
+                    cmbDepartment.Text = "Buff";
+                    cmbDepartment.Enabled = false;
+                    break;
+                case "PAINTING-PC":
+                    cmbDepartment.Text = "Paint";
+                    cmbDepartment.Enabled = false;
+                    break;
+                default:
+                    cmbDepartment.Enabled = true;
+                    break;
+                    
+
             }
 
         }
@@ -63,7 +90,7 @@ namespace Palletizer
 
                             if (o._belongsToPallet == 0)
                             {
-                                frmAllocationType frmAT = new frmAllocationType();
+                                frmAllocationType frmAT = new frmAllocationType(false);
                                 frmAT.ShowDialog();
 
                                 if (Allocation._getAllocationType == "Manual")
@@ -96,7 +123,7 @@ namespace Palletizer
                                 {
                                     //sets the pallet as not free in buffing as it has doors on it
                                     //updatePalletDepartment(o._belongsToPallet, "Buff");
-                                    frmAllocationType frmAT = new frmAllocationType();
+                                    frmAllocationType frmAT = new frmAllocationType(false);
                                     frmAT.ShowDialog();
 
                                     if (Allocation._getAllocationType == "Manual")
@@ -119,6 +146,34 @@ namespace Palletizer
                                 }
                             }
 
+                        }
+                        else if (d._infillID != 3)
+                        {
+
+
+                            //UNSURE 
+
+                            frmAllocationType frmAT = new frmAllocationType(true);
+                            frmAT.ShowDialog();
+
+                            if (Allocation._getAllocationType == "Manual")
+                            {
+                                freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                            }
+                            else
+                            {
+                                freePalletID = a._getFreePallet;
+                            }
+
+                            //INSERT DOOR RECORD
+                            addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
+
+                            //UPDATE PALLET NUMBER
+                            updatePalletStatus(freePalletID);
+                            MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            ////
                         }
                         else
                         {
@@ -156,7 +211,7 @@ namespace Palletizer
 
                         if (o._belongsToPallet == 0)
                         {
-                            frmAllocationType frmAT = new frmAllocationType();
+                            frmAllocationType frmAT = new frmAllocationType(false);
                             frmAT.ShowDialog();
 
                             if (Allocation._getAllocationType == "Manual")
@@ -189,7 +244,7 @@ namespace Palletizer
                                 //sets the pallet as not free in buffing as it has doors on it
                                 //updatePalletDepartment(o._belongsToPallet, "Buff");
 
-                                frmAllocationType frmAT = new frmAllocationType();
+                                frmAllocationType frmAT = new frmAllocationType(false);
                                 frmAT.ShowDialog();
 
                                 if (Allocation._getAllocationType == "Manual")
@@ -211,6 +266,32 @@ namespace Palletizer
                             }
                         }
 
+                    }
+                    else if (d._infillID != 3)
+                    {
+                        //UNSURE 
+
+                        frmAllocationType frmAT = new frmAllocationType(true);
+                        frmAT.ShowDialog();
+
+                        if (Allocation._getAllocationType == "Manual")
+                        {
+                            freePalletID = Convert.ToInt32(Allocation._getManualPallet);
+                        }
+                        else
+                        {
+                            freePalletID = a._getFreePallet;
+                        }
+
+                        //INSERT DOOR RECORD
+                        addDoorToPallet(d._doorID, o._orderID, freePalletID, dept);
+
+                        //UPDATE PALLET NUMBER
+                        updatePalletStatus(freePalletID);
+                        MessageBox.Show("Please add this door number to pallet: " + freePalletID, "Pallet Allocation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        ////
                     }
                     else
                     {
@@ -247,6 +328,9 @@ namespace Palletizer
 
                 default:
                     break;
+
+
+                    
             }
 
 
@@ -254,8 +338,16 @@ namespace Palletizer
             this.c_view_palletizer_visualTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual);
             dgVisual.Refresh();
             dgVisualDoor.Refresh();
+            //commented out due to automation issues
+           // if (cmbDepartment.Text == "Paint")
+           // {
+             //   Application.Exit();
+            //}
+            
             //Allocation a = new Allocation();
             //MessageBox.Show(a.getFreePallet(cmbDepartment.Text).ToString());
+
+
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -322,12 +414,14 @@ namespace Palletizer
             this.c_view_palletizer_visual_doorTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual_door);
             // TODO: This line of code loads data into the 'order_databaseDataSet.c_view_palletizer_visual' table. You can move, or remove it, as needed.
             this.c_view_palletizer_visualTableAdapter.Fill(this.order_databaseDataSet.c_view_palletizer_visual);
-
+            this.WindowState = FormWindowState.Minimized;
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmAllocationType frmAT = new frmAllocationType();
+            frmAllocationType frmAT = new frmAllocationType(false);
             frmAT.ShowDialog();
         }
     }

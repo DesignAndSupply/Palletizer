@@ -39,6 +39,7 @@
             this.rdoAuto = new System.Windows.Forms.RadioButton();
             this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
             this.cmdSelect = new System.Windows.Forms.Button();
+            this.lblNotification = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
@@ -50,9 +51,9 @@
             this.groupBox1.Controls.Add(this.cmbPalletID);
             this.groupBox1.Controls.Add(this.rdoManual);
             this.groupBox1.Controls.Add(this.rdoAuto);
-            this.groupBox1.Location = new System.Drawing.Point(13, 13);
+            this.groupBox1.Location = new System.Drawing.Point(219, 71);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 136);
+            this.groupBox1.Size = new System.Drawing.Size(281, 136);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selection Method";
@@ -73,7 +74,7 @@
             this.cmbPalletID.FormattingEnabled = true;
             this.cmbPalletID.Location = new System.Drawing.Point(8, 98);
             this.cmbPalletID.Name = "cmbPalletID";
-            this.cmbPalletID.Size = new System.Drawing.Size(211, 21);
+            this.cmbPalletID.Size = new System.Drawing.Size(267, 21);
             this.cmbPalletID.TabIndex = 2;
             this.cmbPalletID.ValueMember = "Pallet ID";
             // 
@@ -117,7 +118,7 @@
             // 
             // cmdSelect
             // 
-            this.cmdSelect.Location = new System.Drawing.Point(163, 155);
+            this.cmdSelect.Location = new System.Drawing.Point(419, 213);
             this.cmdSelect.Name = "cmdSelect";
             this.cmdSelect.Size = new System.Drawing.Size(75, 23);
             this.cmdSelect.TabIndex = 1;
@@ -125,11 +126,24 @@
             this.cmdSelect.UseVisualStyleBackColor = true;
             this.cmdSelect.Click += new System.EventHandler(this.cmdSelect_Click);
             // 
+            // lblNotification
+            // 
+            this.lblNotification.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNotification.AutoSize = true;
+            this.lblNotification.ForeColor = System.Drawing.Color.Red;
+            this.lblNotification.Location = new System.Drawing.Point(36, 34);
+            this.lblNotification.Name = "lblNotification";
+            this.lblNotification.Size = new System.Drawing.Size(0, 13);
+            this.lblNotification.TabIndex = 2;
+            this.lblNotification.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmAllocationType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(251, 192);
+            this.ClientSize = new System.Drawing.Size(731, 298);
+            this.Controls.Add(this.lblNotification);
             this.Controls.Add(this.cmdSelect);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -146,6 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,5 +175,6 @@
         private System.Windows.Forms.BindingSource cviewpalletizervisualBindingSource;
         private order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter c_view_palletizer_visualTableAdapter;
         private System.Windows.Forms.Button cmdSelect;
+        private System.Windows.Forms.Label lblNotification;
     }
 }

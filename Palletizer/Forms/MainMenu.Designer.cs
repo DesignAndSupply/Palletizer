@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGenerate = new System.Windows.Forms.Button();
             this.dgVisual = new System.Windows.Forms.DataGridView();
+            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cviewpalletizervisualBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.order_databaseDataSet = new Palletizer.order_databaseDataSet();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +56,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.c_view_palletizer_visualTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visualTableAdapter();
             this.c_view_palletizer_visual_doorTableAdapter = new Palletizer.order_databaseDataSetTableAdapters.c_view_palletizer_visual_doorTableAdapter();
-            this.palletIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.freeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.palletMassDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMachineName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgVisual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cviewpalletizervisualBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.order_databaseDataSet)).BeginInit();
@@ -131,6 +132,24 @@
             this.dgVisual.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgVisual.Size = new System.Drawing.Size(446, 487);
             this.dgVisual.TabIndex = 5;
+            // 
+            // palletIDDataGridViewTextBoxColumn
+            // 
+            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
+            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
+            // 
+            // freeDataGridViewTextBoxColumn
+            // 
+            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
+            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
+            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
+            // 
+            // palletMassDataGridViewTextBoxColumn
+            // 
+            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
+            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
             // 
             // cviewpalletizervisualBindingSource
             // 
@@ -253,29 +272,21 @@
             // 
             this.c_view_palletizer_visual_doorTableAdapter.ClearBeforeFill = true;
             // 
-            // palletIDDataGridViewTextBoxColumn
+            // lblMachineName
             // 
-            this.palletIDDataGridViewTextBoxColumn.DataPropertyName = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.HeaderText = "Pallet ID";
-            this.palletIDDataGridViewTextBoxColumn.Name = "palletIDDataGridViewTextBoxColumn";
-            // 
-            // freeDataGridViewTextBoxColumn
-            // 
-            this.freeDataGridViewTextBoxColumn.DataPropertyName = "Free";
-            this.freeDataGridViewTextBoxColumn.HeaderText = "Free";
-            this.freeDataGridViewTextBoxColumn.Name = "freeDataGridViewTextBoxColumn";
-            // 
-            // palletMassDataGridViewTextBoxColumn
-            // 
-            this.palletMassDataGridViewTextBoxColumn.DataPropertyName = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.HeaderText = "Pallet Mass";
-            this.palletMassDataGridViewTextBoxColumn.Name = "palletMassDataGridViewTextBoxColumn";
+            this.lblMachineName.AutoSize = true;
+            this.lblMachineName.Location = new System.Drawing.Point(16, 13);
+            this.lblMachineName.Name = "lblMachineName";
+            this.lblMachineName.Size = new System.Drawing.Size(35, 13);
+            this.lblMachineName.TabIndex = 9;
+            this.lblMachineName.Text = "label5";
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1304, 622);
+            this.Controls.Add(this.lblMachineName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgVisualDoor);
@@ -330,6 +341,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn palletIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn freeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn palletMassDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblMachineName;
     }
 }
 
